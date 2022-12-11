@@ -82,7 +82,7 @@ public class UserRegistration {
     public static void validPassRule2() {
         System.out.print("Enter the Password Atleast One Upper Case & Eight Character :");
         String passWord = scanner.nextLine();
-        String regex4 = "^[A-Z ]{1}[A-Z a-z 0-9]{7,}$";
+        String regex4 = "^[A-Z a-z]{1}[A-Z a-z 0-9]{7,}$";
         Pattern p4 = Pattern.compile(regex4);
         Matcher m4 = p4.matcher(passWord);
         boolean r4 = m4.matches();
@@ -91,4 +91,17 @@ public class UserRegistration {
         else
             System.out.println("Password is Invalid");
     }
+    public static void validPassRule3() {
+        System.out.println("Enter the Password Atleast One Upper Case & One Numaric");
+        String passWord2 = scanner.nextLine();
+        String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+{1,}$";
+        Pattern p6 = Pattern.compile(regex6);
+        Matcher m6 = p6.matcher(passWord2);
+        boolean r6 = m6.matches();
+        if (r6)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is Invalid");
+    }
+
 }
